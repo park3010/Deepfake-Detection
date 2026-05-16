@@ -1,0 +1,85 @@
+NUM_GPUS: 1
+
+TRAIN:
+  ENABLE: True
+  MAX_EPOCH: 10
+  CHECKPOINT_PERIOD: 1
+  CHECKPOINT_EPOCH_RESET: True
+  CHECKPOINT_SAVE_PATH: "/home/oem/deepfake/Ourmethod/comparison/_ckpt/m2tr"
+
+TEST:
+  ENABLE: True
+  CHECKPOINT_TEST_PATH: "/home/oem/deepfake/Ourmethod/comparison/_ckpt/m2tr/checkpoints/M2TR_FFPPVideo_epoch_00010.pyth"
+
+DATASET:
+  DATASET_NAME: FFPPVideo
+  ROOT_DIR: "/home/oem/deepfake/hdd"
+  COMPRESSION: "raw"
+
+  SELECTED_KEYS:
+    - original
+    - DeepFakeDetection_original
+    - Deepfakes
+    - DeepFakeDetection
+    - Face2Face
+    - FaceShifter
+    - FaceSwap
+    - NeuralTextures
+
+  IMG_SIZE: 320
+  SCALE_RATE: 1.0
+  VAL_RATIO: 0.2
+  TEST_RATIO: 0.0
+  SPLIT_SEED: 42
+
+  TRAIN_AUGMENTATIONS:
+    COMPOSE:
+      - [ChannelDropout, ToGray]
+      - [ColorJitter, RandomBrightnessContrast, HueSaturationValue, CLAHE, RandomGamma, Sharpen]
+      - [Blur, MotionBlur, GaussianBlur, GlassBlur]
+      - GaussNoise
+      - HorizontalFlip
+      - Rotate
+      - [RandomFog, RandomRain, RandomSnow, RandomSunFlare, RandomToneCurve]
+      - CoarseDropout
+      - ImageCompression
+      - Normalize
+    ROTATE_PARAMS: [10]
+    COARSEDROPOUT_PARAMS: [10, 10]
+    IMAGECOMPRESSION_PARAMS: [65, 80]
+    NORMALIZE_PARAMS: [[0.485, 0.456, 0.406], [0.229, 0.224, 0.225]]
+
+  TEST_AUGMENTATIONS:
+    COMPOSE: [Resize, Normalize]
+    NORMALIZE_PARAMS: [[0.485, 0.456, 0.406], [0.229, 0.224, 0.225]]
+
+DATALOADER:
+  BATCH_SIZE: 4 #16
+  NUM_WORKERS: 8
+  PIN_MEM: True
+
+LOSS:
+  LOSS_FUN: FocalLoss
+  LOSS_WEIGHT:
+    logits: True
+
+MODEL:
+  MODEL_NAME: M2TR
+  PRETRAINED: "imagenet"
+  ESCAPE: ""
+  IMG_SIZE: 320
+  BACKBONE: efficientnet-b4
+  DEPTH: 4
+  TEXTURE_LAYER: b2
+  FEATURE_LAYER: final
+  NUM_CLASSES: 2
+  DROP_RATIO: 0.5
+  HAS_DECODER: False
+
+OPTIMIZER:
+  OPTIMIZER_METHOD: adamw
+  BASE_LR: 0.001
+  ADAM_BETAS: [0.9, 0.999]
+  EPS: 0.00000001
+  WEIGHT_DECAY: 0.01
+  AMSGRAD: False

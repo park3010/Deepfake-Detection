@@ -1,0 +1,9 @@
+split,method,label,videos,frames
+original_sequences,actors,real,363,62883
+original_sequences,youtube,real,1000,102212
+manipulated_sequences,DeepFakeDetection,fake,3068,449436
+manipulated_sequences,Deepfakes,fake,1000,102149
+manipulated_sequences,Face2Face,fake,1000,102208
+manipulated_sequences,FaceShifter,fake,1000,102212
+manipulated_sequences,FaceSwap,fake,1000,81623
+manipulated_sequences,NeuralTextures,fake,1000,81622

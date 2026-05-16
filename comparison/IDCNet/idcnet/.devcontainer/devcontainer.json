@@ -1,0 +1,5 @@
+{
+    "name": "icdnet",
+    "image": "sida:latest",
+    "runArgs": ["--gpus", "all", "--runtime", "nvidia", "--shm-size", "80g"]
+}

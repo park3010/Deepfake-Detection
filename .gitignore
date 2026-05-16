@@ -1,0 +1,70 @@
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Git/IDE/env
+.vscode/
+.idea/
+.env
+.venv/
+venv/
+
+# Model checkpoints / pretrained weights
+*.pth
+*.pt
+*.ckpt
+*.pyth
+*.hdf5
+*.h5
+*.onnx
+*.bin
+*.safetensors
+*.pkl
+*.pickle
+
+# Feature / numpy dumps
+*.npy
+*.npz
+*.mat
+
+# Logs / experiment outputs
+*.log
+logs/
+wandb/
+runs/
+outputs/
+output/
+results/
+result/
+checkpoint/
+checkpoints/
+_ckpt/
+*_ckpt/
+models/
+
+# Images / videos / visualization outputs
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.webp
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Dataset / pretrained folders
+data/
+dataset/
+datasets/
+images/
+pretrained/
+weight/
+weights/

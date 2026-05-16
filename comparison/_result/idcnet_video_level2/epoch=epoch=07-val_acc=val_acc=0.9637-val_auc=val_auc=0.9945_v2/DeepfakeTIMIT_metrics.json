@@ -1,0 +1,17 @@
+{
+    "dataset": "DeepfakeTIMIT",
+    "accuracy": 0.0015723270440251573,
+    "precision": 1.0,
+    "recall": 0.0015723270440251573,
+    "f1_macro": 0.0015698587127158557,
+    "f1_binary": 0.0031397174254317113,
+    "pred_real_count": 635,
+    "pred_fake_count": 1,
+    "TN": 0,
+    "FP": 0,
+    "FN": 635,
+    "TP": 1,
+    "prob_fake_mean": 0.1643635970396913,
+    "prob_fake_std": 0.15303013230821974,
+    "roc_auc": null
+}

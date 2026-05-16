@@ -1,0 +1,8 @@
+{
+    "dataset": "DeepfakeTIMIT",
+    "accuracy": 0.9968553459119497,
+    "precision": 1.0,
+    "recall": 0.9968553459119497,
+    "f1_macro": 0.49921259842519683,
+    "f1_binary": 0.9984251968503937
+}

@@ -1,0 +1,21 @@
+{
+    "dataset": "Overall",
+    "accuracy": 0.5752113306835358,
+    "precision": 0.7971542401821287,
+    "recall": 0.5467249590131938,
+    "f1_macro": 0.555834323678247,
+    "f1_binary": 0.6486060942854497,
+    "pred_real_count": 9078,
+    "pred_fake_count": 8785,
+    "TN": 3272,
+    "FP": 1782,
+    "FN": 5806,
+    "TP": 7003,
+    "prob_fake_mean": 0.388940798601846,
+    "prob_fake_std": 0.1953053154725561,
+    "roc_auc": 0.6548652520412828,
+    "roc_auc_excluding_fake_only": 0.6548652520412828,
+    "excluded_from_auc": [
+        "DeepfakeTIMIT"
+    ]
+}
