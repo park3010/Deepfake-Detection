@@ -1,5 +1,3 @@
-# Deepfake-Detection
-
 # Semantic-Conditioned Tri-Stream Fusion for Cross-Dataset Deepfake Detection
 
 Official research code repository for:
